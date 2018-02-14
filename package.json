@@ -28,6 +28,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer-cli": "^1.0.0",
+    "babel-standalone": "^6.26.0",
     "browser-sync": "^2.23.2",
     "glob-run": "^0.1.6",
     "jshint": "^2.9.5",
