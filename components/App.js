@@ -34,6 +34,5 @@ var App = React.createClass({
         (Contacts, items={contacts})
       </div>
       )
-    );
   }
 });
