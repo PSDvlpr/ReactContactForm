@@ -1,25 +1,20 @@
 const ContactForm = React.createClass({
   getInitialState() {
     return {
-      contacts: [
-      {
-        firstName: '',
-        lastName: '',
-        email: ''
-      }]
-    };
+      firstName: '',
+      lastName: '',
+      email: ''
+      }
   },
 
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.add(this.state.contacts);
+    this.props.add(this.state);
     this.setState({
-      contacts: [{
         firstName: '',
         lastName: '',
         email: ''
-      }]
     });
   },
 
@@ -49,16 +44,16 @@ const ContactForm = React.createClass({
       <form onSubmit={this.handleSubmit} className={'contactForm'}>
         <input type={'text'}
                placeholder={'Imię'}
-               value={this.state.contacts.firstName}
-               onFirstNameChange={this.updateFirstName}></input>
+               value={this.state.firstName}
+               onChange={this.onFirstNameChange}></input>
         <input type={'text'}
                placeholder={'Nazwisko'}
-               value={this.state.contacts.lastName}
-               onNameChange={this.updateName}></input>
+               value={this.state.lastName}
+               onChange={this.onNameChange}></input>
         <input type={'email'}
                placeholder={'Email'}
-               value={this.state.contacts.email}
-               onEmailChange={this.updateMail}></input>
+               value={this.state.email}
+               onChange={this.onEmailChange}></input>
         <button type={'submit'}>Dodaj kontakt</button>
       </form>
     );
