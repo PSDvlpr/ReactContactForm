@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import style from '../css/style.css';
-
-
-class ContactForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+const ContactForm = React.createClass({
+  getInitialState() {
+    return {
       contacts: [{
         firstName: '',
         lastName: '',
         email: ''
       }]
     };
-  }
+  },
 
   handleSubmit(e) {
     e.preventDefault();
@@ -25,50 +20,46 @@ class ContactForm extends Component {
         email: ''
       }]
     });
-  }
+  },
 
   onFirstNameChange(e) {
     e.preventDefault();
     this.setState({
       firstName: e.target.value
     });
-  }
+  },
 
   onNameChange(e) {
     e.preventDefault();
     this.setState({
       lastName: e.target.value
     });
-  }
+  },
 
   onEmailChange(e) {
     e.preventDefault();
     this.setState({
       email: e.target.value
     });
-  }
-
-
+  },
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit} className={style.contactForm}>
+      <form onSubmit={this.handleSubmit} className={'contactForm'}>
         <input type='text'
                placeholder='Imię'
-               value={this.contact.firstName}
+               value={this.state.contacts.firstName}
                onFirstNameChange={this.updateFirstName}></input>
         <input type='text'
                placeholder='Nazwisko'
-               value={this.contact.lastName}
+               value={this.state.contacts.lastName}
                onNameChange={this.updateName}></input>
         <input type={'email'}
                placeholder='Email'
-               value={this.contact.email}
-               onEmailChange={this.updteMail}></input>
+               value={this.state.contacts.email}
+               onEmailChange={this.updateMail}></input>
         <button type='submit'>Dodaj kontakt</button>
       </form>
     );
   }
-}
-
-export default ContactForm;
+});
