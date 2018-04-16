@@ -1,7 +1,8 @@
 const ContactForm = React.createClass({
   getInitialState() {
     return {
-      contacts: [{
+      contacts: [
+      {
         firstName: '',
         lastName: '',
         email: ''
