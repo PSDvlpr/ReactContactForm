@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "http-server",
     "test": "npm run test:html && npm run test:js",
     "test:html": "glob-run nu-html-checker *.html",
     "test:js": "glob-run jshint js/*.js",
@@ -39,10 +39,6 @@
     "rimraf": "^2.6.2"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-react": "^6.24.1",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "http-server": "^0.11.1"
   }
 }
