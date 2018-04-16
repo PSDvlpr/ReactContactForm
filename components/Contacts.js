@@ -1,7 +1,7 @@
 const Contacts = React.createClass({
-  propTypes: {
-    items: React.propTypes.array.isRequired
-  },
+  // propTypes: {
+  //   items: React.propTypes.array.isRequired
+  // },
 
   render() {
     let contacts = this.props.items.map(contact => {
