@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
-import styles from '../css/style.css';
-import ContactForm from './ContactForm';
-import Contacts from './Contacts';
-
-
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            contacts: [{
+const App = React.createClass({
+    getInitialState() {
+        return {
+            contacts: [
+                {
                     id: 1,
                     firstName: 'Jan',
                     lastName: 'Nowak',
@@ -27,7 +21,7 @@ class App extends Component {
                     email: 'zbigniew.koziol@example.com',
                 }]
             };
-        }
+        },
 
     addContact(val) {
         const contact = {
@@ -39,7 +33,7 @@ class App extends Component {
 
         const contacts = [...this.state.contacts, contact];
         this.setState({contacts});
-    }
+    },
 
     render() {
         return(
@@ -49,4 +43,4 @@ class App extends Component {
             </div>
         );
     }
-}
+});
