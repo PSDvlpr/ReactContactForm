@@ -1,7 +1,7 @@
 const Contact = React.createClass({
-  // propTypes: {
-  //   item: React.propTypes.object.isRequired
-  // },
+  propTypes: {
+    item: React.PropTypes.object.isRequired
+  },
 
   render() {
     return (
