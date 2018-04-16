@@ -26,9 +26,9 @@ const App = React.createClass({
     addContact(val) {
         const contact = {
             id: this.state.contacts.length + 1,
-            firstName: val.contacts.firstName,
-            lastName: val.contacts.lastName,
-            email: val.contacts.email
+            firstName: val.firstName,
+            lastName: val.lastName,
+            email: val.email
         };
 
         const contacts = [...this.state.contacts, contact];
@@ -39,7 +39,7 @@ const App = React.createClass({
         return(
             <div className='app'>
                 <ContactForm add={this.addContact} />
-                <Contacts items={contacts} />
+                <Contacts items={this.state.contacts} />
             </div>
         );
     }
